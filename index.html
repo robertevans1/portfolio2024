@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter component examples</title>
     <style>
-        /* Define CSS rules for container divs */
-        .flutter-component-container {
+        /* Define CSS rules for container iframes */
+        .flutter-component-iframe {
             width: 300px; /* Set the width */
             height: 200px; /* Set the height */
             border: 1px solid #000; /* Optional: Add border for visualization */
@@ -18,37 +18,29 @@
 <body>
 
     Some text blah blah blah
-    <!-- Add a container for your Flutter web component -->
-    <div id="flutterComponent1" class="flutter-component-container"></div>
-    <div id="flutterComponent2" class="flutter-component-container"></div>
+    <!-- Add iframes for your Flutter web component -->
+    <iframe id="flutterIframe1" class="flutter-component-iframe" src="swarm/index.html"></iframe>
+    <iframe id="flutterIframe2" class="flutter-component-iframe" src="swarm/index.html"></iframe>
 
-    <!-- Load the necessary JavaScript files -->
-    <script src="swarm/main.dart.js" type="application/javascript"></script>
-    <!-- <script src="swarm/web_entrypoint.dart.js" type="application/javascript"></script> -->
-
-    <!-- Initialize first Flutter component -->
     <script>
-        // Initialize first Flutter component
-        if (typeof flutterWebRenderer1 === "undefined") {
+        // Initialize first Flutter component iframe
+        document.getElementById('flutterIframe1').onload = function() {
             var script1 = document.createElement('script');
             script1.src = 'swarm/main.dart.js';
             script1.type = 'application/javascript';
-            script1.setAttribute('data-container', 'flutterComponent1'); 
-            document.body.appendChild(script1);
-        }
-    </script>
+            this.contentDocument.body.appendChild(script1);
+        };
 
-    <!-- Initialize second Flutter component -->
-    <script>
-        // Initialize second Flutter component
-        if (typeof flutterWebRenderer2 === "undefined") {
+        // Initialize second Flutter component iframe
+        document.getElementById('flutterIframe2').onload = function() {
             var script2 = document.createElement('script');
             script2.src = 'swarm/main.dart.js';
             script2.type = 'application/javascript';
-            script1.setAttribute('data-container', 'flutterComponent2');
-            document.body.appendChild(script2);
-        }
+            this.contentDocument.body.appendChild(script2);
+        };
     </script>
+
 </body>
 
 </html>
+

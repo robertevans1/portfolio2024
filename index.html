@@ -17,29 +17,20 @@
 
 <body>
 
-    Some text blah blah 
-    <!-- Add iframes for your Flutter web component -->
-    <iframe id="flutterIframe1" class="flutter-component-iframe" src="swarm/index.html"></iframe>
-    <!-- <iframe id="flutterIframe2" class="flutter-component-iframe" src="swarm/index.html"></iframe> -->
-
+    <h1>This is my website!</h1>
     <script>
-        // Initialize first Flutter component iframe
-        document.getElementById('flutterIframe1').onload = function() {
-            var iframeDoc = this.contentDocument;
-            var script1 = iframeDoc.createElement('script');
-            script1.src = 'swarm/main.dart.js';
-            script1.type = 'application/javascript';
-            iframeDoc.body.appendChild(script1);
-        };
-
-        // // Initialize second Flutter component iframe
-        // document.getElementById('flutterIframe2').onload = function() {
-        //     var script2 = document.createElement('script');
-        //     script2.src = 'swarm/main.dart.js';
-        //     script2.type = 'application/javascript';
-        //     this.contentDocument.body.appendChild(script2);
-        // };
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker.register("swarm/flutter_service_worker.js");
+        });
+      }
     </script>
+    <flutter-app width="600px" height="800px"></flutter-app>
+    <script src="swarm/flutter.js"></script>
+    <br>
+    <footer>
+      <span>Here is my footer!</span>
+    </footer>
 
 </body>
 

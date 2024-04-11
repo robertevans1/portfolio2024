@@ -17,10 +17,10 @@
 
 <body>
 
-    Some text blah blah blah
+    Some text blah blah 
     <!-- Add iframes for your Flutter web component -->
     <iframe id="flutterIframe1" class="flutter-component-iframe" src="swarm/index.html"></iframe>
-    <iframe id="flutterIframe2" class="flutter-component-iframe" src="swarm/index.html"></iframe>
+    <!-- <iframe id="flutterIframe2" class="flutter-component-iframe" src="swarm/index.html"></iframe> -->
 
     <script>
         // Initialize first Flutter component iframe
@@ -31,13 +31,13 @@
             this.contentDocument.body.appendChild(script1);
         };
 
-        // Initialize second Flutter component iframe
-        document.getElementById('flutterIframe2').onload = function() {
-            var script2 = document.createElement('script');
-            script2.src = 'swarm/main.dart.js';
-            script2.type = 'application/javascript';
-            this.contentDocument.body.appendChild(script2);
-        };
+        // // Initialize second Flutter component iframe
+        // document.getElementById('flutterIframe2').onload = function() {
+        //     var script2 = document.createElement('script');
+        //     script2.src = 'swarm/main.dart.js';
+        //     script2.type = 'application/javascript';
+        //     this.contentDocument.body.appendChild(script2);
+        // };
     </script>
 
 </body>

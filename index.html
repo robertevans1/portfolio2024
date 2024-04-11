@@ -4,26 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Flutter Web Component</title>
+    <title>Flutter component examples</title>
 </head>
 
 <body>
+
+    Some text blah blah blah
     <!-- Add a container for your Flutter web component -->
-    <div id="flutterComponent"></div>
+    <div id="flutterComponent1"></div>
+    <div id="flutterComponent2"></div>
 
     <!-- Load the necessary JavaScript files -->
     <script src="swarm/main.dart.js" type="application/javascript"></script>
-    <script src="swarm/web_entrypoint.dart.js" type="application/javascript"></script>
+    <!-- <script src="swarm/web_entrypoint.dart.js" type="application/javascript"></script> -->
 
-    <!-- Initialize Flutter web component -->
+    <!-- Initialize first Flutter component -->
     <script>
-        // Initialize Flutter web component
-        if (typeof flutterWebRenderer === "undefined") {
-            // Create a DartLoader instance and load your main.dart.js
-            var script = document.createElement('script');
-            script.src = 'swarm/main.dart.js';
-            script.type = 'application/javascript';
-            document.body.appendChild(script);
+        // Initialize first Flutter component
+        if (typeof flutterWebRenderer1 === "undefined") {
+            var script1 = document.createElement('script');
+            script1.src = 'swarm/main.dart.js';
+            script1.type = 'application/javascript';
+            script1.setAttribute('data-container', 'flutterComponent1'); 
+            document.body.appendChild(script1);
+        }
+    </script>
+
+    <!-- Initialize second Flutter component -->
+    <script>
+        // Initialize second Flutter component
+        if (typeof flutterWebRenderer2 === "undefined") {
+            var script2 = document.createElement('script');
+            script2.src = 'swarm/main.dart.js';
+            script2.type = 'application/javascript';
+            script1.setAttribute('data-container', 'flutterComponent2');
+            document.body.appendChild(script2);
         }
     </script>
 </body>

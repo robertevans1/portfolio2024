@@ -25,10 +25,11 @@
     <script>
         // Initialize first Flutter component iframe
         document.getElementById('flutterIframe1').onload = function() {
-            var script1 = document.createElement('script');
+            var iframeDoc = this.contentDocument;
+            var script1 = iframeDoc.createElement('script');
             script1.src = 'swarm/main.dart.js';
             script1.type = 'application/javascript';
-            this.contentDocument.body.appendChild(script1);
+            iframeDoc.body.appendChild(script1);
         };
 
         // // Initialize second Flutter component iframe

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flutter Web Component</title>
+</head>
+
+<body>
+    <!-- Add a container for your Flutter web component -->
+    <div id="flutterComponent"></div>
+
+    <!-- Load the necessary JavaScript files -->
+    <script src="swarm/main.dart.js" type="application/javascript"></script>
+    <script src="swarm/web_entrypoint.dart.js" type="application/javascript"></script>
+
+    <!-- Initialize Flutter web component -->
+    <script>
+        // Initialize Flutter web component
+        if (typeof flutterWebRenderer === "undefined") {
+            // Create a DartLoader instance and load your main.dart.js
+            var script = document.createElement('script');
+            script.src = 'swarm/main.dart.js';
+            script.type = 'application/javascript';
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>

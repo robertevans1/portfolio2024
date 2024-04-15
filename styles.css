@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-family: Cochin, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header styles */
+.header {
+    background-color: #2c3e50; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    font-size: 32px; /* Larger font size */
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Add some letter spacing for emphasis */
+}
+
+.profile-image {
+    display: block;
+    width: 200px; 
+    height: auto;
+    margin-bottom: 20px; 
+}
+.left-container {
+    max-width: 65%;
+}
+
+/* Define styles for sidebar and main area */
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #f4f4f4;
+    float: left;
+    padding: 20px;
+}
+
+.main {
+    margin-left: 220px; /* Adjust for the sidebar width */
+    height: 100%;
+    padding-left: 40px;
+}
+
+.iframe-container {
+    width: 100%;
+    height: calc(100% - 40px); /* Adjust for padding */
+    overflow: auto; /* Add scrollbars if content overflows */
+}
+
+/* Style for the project links */
+.project-link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #ddd;
+}

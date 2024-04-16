@@ -26,6 +26,16 @@
             0% { transform: translate(-50%, -50%) rotate(0deg); }
             100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
+        .content {
+            height: 100%;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+        .main {
+            margin-left: 220px; /* Adjust for the sidebar width */
+            height: 100%;
+            padding-left: 40px;
+        }
     </style>
 </head>
 
@@ -35,51 +45,53 @@
     </div>
 
     <!-- Sidebar with project list -->
-    <div class="sidebar">
-        <h2>Bio</h2>
-        <ul>
-            <li><a class="project-link" href="#" onclick="loadProject('about_me/index.html')">About Me</a></li>
-        </ul>
-        <h2>Projects</h2>
-        <ul>
-            <li><a class="project-link" href="#" onclick="loadProject('swarm/swarm.html')">Swarm Intelligence</a></li>
-            <li><a class="project-link" href="#" onclick="loadProject('first_player_picker/index.html')">First Player Picker</a></li>
-            <!-- Add more project links as needed -->
-        </ul>
-    </div>
-
-    <!-- Main area for displaying project content -->
-    <div class="main">
-        <div class="spinner" id="loading-spinner"></div>
-        
-        <div class="iframe-container">
-            <!-- Placeholder for project content -->
-            <iframe id="project-iframe" src="about_me/index.html" width="100%" height="100%" frameborder="0"></iframe>
+    <div class="content">
+        <div class="sidebar">
+            <h2>Bio</h2>
+            <ul>
+                <li><a class="project-link" href="#" onclick="loadProject('about_me/index.html')">About Me</a></li>
+            </ul>
+            <h2>Projects</h2>
+            <ul>
+                <li><a class="project-link" href="#" onclick="loadProject('swarm/index.html')">Swarm Intelligence</a></li>
+                <li><a class="project-link" href="#" onclick="loadProject('first_player_picker/index.html')">First Player Picker</a></li>
+                <!-- Add more project links as needed -->
+            </ul>
         </div>
+
+        <!-- Main area for displaying project content -->
+        <div class="main">
+            <div class="spinner" id="loading-spinner"></div>
+            
+            <div class="iframe-container">
+                <!-- Placeholder for project content -->
+                <iframe id="project-iframe" src="about_me/index.html" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <script>
+            function showLoadingSpinner() {
+                document.getElementById('loading-spinner').style.display = 'block';
+            }
+
+            function hideLoadingSpinner() {
+                document.getElementById('loading-spinner').style.display = 'none';
+            }
+
+            // Function to load project content into iframe
+            function loadProject(url) {
+                showLoadingSpinner();
+
+                document.getElementById('project-iframe').src = url;
+
+                document.getElementById('project-iframe').onload = function() {
+                    hideLoadingSpinner();
+                };
+
+                return false; // Prevent default link behavior
+            }
+        </script>
     </div>
-
-    <script>
-        function showLoadingSpinner() {
-            document.getElementById('loading-spinner').style.display = 'block';
-        }
-
-        function hideLoadingSpinner() {
-            document.getElementById('loading-spinner').style.display = 'none';
-        }
-
-        // Function to load project content into iframe
-        function loadProject(url) {
-            showLoadingSpinner();
-
-            document.getElementById('project-iframe').src = url;
-
-            document.getElementById('project-iframe').onload = function() {
-                hideLoadingSpinner();
-            };
-
-            return false; // Prevent default link behavior
-        }
-    </script>
 </body>
 
 </html>

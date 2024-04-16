@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <style>
+        .container {
+            display: flex;
+            height: 100%; /* Set the height of the container to 100% */
+            padding: 20px;
+        }
+        .left {
+            flex: 1;
+            height: 100%; /* Set height to 100% */
+            padding-right: 20px;
+        }
+        .right {
+            flex: 1;
+            height: 100%; /* Set height to 100% */
+        }
+        .github-logo {
+            width: 50px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 200px); /* Set height to 100% of viewport height */
+            border: none; /* Remove iframe border */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+                <iframe src="flutter_build/index.html"></iframe>
+        </div>
+        <div class="right">
+            <h1>Swarm Intelligence</h1>
+            <p>Built using Flutter</p>
+            <p>
+                Swarm Intelligence is a demonstration of the boids algorithm, a computer simulation of the flocking behaviour of birds. 
+                The algorithm was developed by Craig Reynolds in 1986, and has been used in a variety of applications, 
+                including video games and computer graphics.
+            </p>
+            <p>
+                This project builds a flutter app that simulates a shoal of fish swimming together. 
+                The direction each fish swims is affected by looking at it's nearset neighbours. 
+                The factors that influence with way the fish should swim to remain in the shoal are:
+                <ul>
+                    <li>What is the general direction my close neighbors are swimming, try to align</li>
+                    <li>Are any neighbors very close, turn away to give some space if so.</li>
+                    <li>In which direction are neighbors more densely packed, try to swim toward this to keep in middle of the shoal</li>
+                    <li>Is the edge of the swimming area close, turn away if so</li>
+                </ul>
+                Modifying the relative strength of these different factors changes the behaviour of the shoal. This program allows the user to play around with each component.
+            </p>
+            
+        </div>
+        <div class="github-logo">
+            <a href="https://github.com/robertevans1/swarm_intelligence">
+                <img src="../assets/github-mark.png" alt="GitHub" style="max-width: 100%; height: auto;">
+            </a>
+            Project source code
+        </div>
+    </div>
+</body>
+</html>

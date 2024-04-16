@@ -2,7 +2,6 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: auto;
     font-family: Cochin, sans-serif;
     line-height: 1.6;
 }
@@ -17,6 +16,7 @@ html, body {
     font-weight: bold;
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 2px; /* Add some letter spacing for emphasis */
+    position: sticky;
 }
 
 .profile-image {
@@ -24,9 +24,6 @@ html, body {
     width: 200px; 
     height: auto;
     margin-bottom: 20px; 
-}
-.left-container {
-    max-width: 65%;
 }
 
 /* Define styles for sidebar and main area */
@@ -38,16 +35,10 @@ html, body {
     padding: 20px;
 }
 
-.main {
-    margin-left: 220px; /* Adjust for the sidebar width */
-    height: 100%;
-    padding-left: 40px;
-}
-
 .iframe-container {
     width: 100%;
     height: calc(100% - 40px); /* Adjust for padding */
-    overflow: auto; /* Add scrollbars if content overflows */
+    overflow: hidden; /* Add scrollbars if content overflows */
 }
 
 /* Style for the project links */

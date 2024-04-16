@@ -5,6 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Style for the loading spinner */
+        .spinner {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #333;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Animation for the loading spinner */
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
 </head>
 
 <body>
@@ -28,6 +50,8 @@
 
     <!-- Main area for displaying project content -->
     <div class="main">
+        <div class="spinner" id="loading-spinner"></div>
+        
         <div class="iframe-container">
             <!-- Placeholder for project content -->
             <iframe id="project-iframe" src="about_me/index.html" width="100%" height="100%" frameborder="0"></iframe>
@@ -35,9 +59,24 @@
     </div>
 
     <script>
+        function showLoadingSpinner() {
+            document.getElementById('loading-spinner').style.display = 'block';
+        }
+
+        function hideLoadingSpinner() {
+            document.getElementById('loading-spinner').style.display = 'none';
+        }
+
         // Function to load project content into iframe
         function loadProject(url) {
+            showLoadingSpinner();
+
             document.getElementById('project-iframe').src = url;
+
+            document.getElementById('project-iframe').onload = function() {
+                hideLoadingSpinner();
+            };
+
             return false; // Prevent default link behavior
         }
     </script>

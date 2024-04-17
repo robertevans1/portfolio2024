@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100%; /* Set the height of the container to 100% */
+            padding: 20px;
+        }
+        .left {
+            flex: 1;
+            height: 100%; /* Set height to 100% */
+            padding-right: 20px;
+        }
+        .right {
+            flex: 2;
+            height: 100%; /* Set height to 100% */
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 100px); /* Set height to 100% of viewport height - the top banner and padding */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+                <iframe src="../assets/florence_video.mp4"></iframe>
+        </div>
+        <div class="right">
+            <h1>Florence</h1>
+            <h3>Flutter mobile app</h3>
+            <p>
+                From April 2022 until November 2023 I worked as a developer at Florence. Initially I worked solely as a Flutter developer working on their mobile app. 
+                Later as a full stack developer or product engineer. The florence app is used by over 100k care professionals across the UK, France and Canada. 
+                I was one of 3 mobile developers at the company and so had a significant impact on the app. 
+            </p>
+            <h3>Technical notes</h3>
+            <p>
+                The mobile app is built using Flutter, the backend is written using ruby on rails. There is a web app used by care homes with a frontend written in React. Ultimately I worked on all 3 codebases. 
+                The app uses riverpod for state management, and a number of modern packages for handling event tracking, analytics, authorisation and error handling. 
+                Some of the features I had responsibility for in the app included:
+                <ul>
+                    <li>Adding a new flow for care professionals to claim compensation for miles driven</li>
+                    <li>Several updates to the onboarding pipeline</li>
+                    <li>Adding a process to use machine learing tools as a first pass assessing uploaded documentation</li>
+                    <li>Adding the ability for care professionals to work 'compound' shifts, where they stay overnight at a residence</li>
+            </p>
+            
+        </div>
+    </div>
+</body>
+</html>

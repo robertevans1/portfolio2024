@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
     <style>
         .container {
             display: flex;
@@ -22,8 +22,8 @@
         }
         iframe {
             width: 100%;
-            height: calc(100vh - 200px); /* Set height to 100% of viewport height */
-            border: none; /* Remove iframe border */
+            height: calc(100vh - 100px); /* Set height to 100% of viewport height - the top banner and padding */
+            border: none;
         }
     </style>
 </head>
@@ -34,7 +34,7 @@
         </div>
         <div class="right">
             <h1>Swarm Intelligence</h1>
-            <p>Built using Flutter</p>
+            <h3>Flutter App</p>
             <p>
                 Swarm Intelligence is a demonstration of the boids algorithm, a computer simulation of the flocking behaviour of birds. 
                 The algorithm was developed by Craig Reynolds in 1986, and has been used in a variety of applications, 
@@ -55,7 +55,7 @@
             
         </div>
         <div class="github-logo">
-            <a href="https://github.com/robertevans1/swarm_intelligence">
+            <a href="https://github.com/robertevans1/swarm_intelligence" target="_blank">
                 <img src="../assets/github-mark.png" alt="GitHub" style="max-width: 100%; height: auto;">
             </a>
             Project source code

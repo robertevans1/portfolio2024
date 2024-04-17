@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/portfolio2024/first_player_picker/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="first_player_picker">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>first_player_picker</title>
-  <link rel="manifest" href="manifest.json">
-
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "2818871979";
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100%; /* Set the height of the container to 100% */
+            padding: 20px;
+        }
+        .left {
+            flex: 1;
+            height: 100%; /* Set height to 100% */
+            padding-right: 20px;
+        }
+        .right {
+            flex: 1;
+            height: 100%; /* Set height to 100% */
+        }
+        .github-logo {
+            width: 50px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 100px); /* Set height to 100% of viewport height - the top banner and padding */
+            border: none;
+        }
+    </style>
 </head>
 <body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
+    <div class="container">
+        <div class="left">
+                <iframe src="flutter_build/index.html"></iframe>
+        </div>
+        <div class="right">
+            <h1>First Player Picker</h1>
+            <h3>Flutter App</h3>
+            <p>
+                This was the first flutter project I worked on. It's a simple app that helps you decide who goes first in a game. 
+                I've included it in the portfolio as this was an app that I released on google play and the app store which was a good learning experience for me. 
+                The app had a few hundred downloads on each marketplace. 
+            </p>
+        </div>
+        <div class="github-logo">
+            <a href="https://github.com/robertevans1/first_player_picker" target="_blank">
+                <img src="../assets/github-mark.png" alt="GitHub" style="max-width: 100%; height: auto;">
+            </a>
+            Project source code
+        </div>
+    </div>
 </body>
 </html>

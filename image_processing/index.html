@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100%; /* Set the height of the container to 100% */
+            padding: 20px;
+        }
+        .left {
+            flex: 1;
+            height: 100%; /* Set height to 100% */
+            padding-right: 20px;
+        }
+        .right {
+            flex: 2;
+            height: 100%; /* Set height to 100% */
+        }
+        .github-logos {
+            width: 50px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 100px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+                <iframe src="../assets/blur_image.webm"></iframe>
+        </div>
+        <div class="right">
+            <h1>Image Processing App</h1>
+            <h3>Flutter frontend, C++ backend</h3>
+            <p>
+               As I've worked both as a mobile and a c++ engineer I wanted to showcase how the two can be combined. 
+               This project is a simple image processing app that allows the user to blur an image. 
+               The app is built using flutter, and the image processing is done using a c++ backend. 
+               Creating a more complex image processing pipeline is something better suited to the c++ world. 
+               So combining the two allows for a more powerful app.
+            </p>
+        </div>
+        <div class="github-logos">
+            <a href="https://github.com/robertevans1/facefinderapp" target="_blank">
+                <img src="../assets/github-mark.png" alt="GitHub" style="max-width: 100%; height: auto;">
+            </a>
+            Flutter source code
+            <a href="https://github.com/robertevans1/facefinder_c-" target="_blank">
+                <img src="../assets/github-mark.png" alt="GitHub" style="max-width: 100%; height: auto;">
+            </a>
+            C++ source code
+        </div>
+    </div>
+</body>
+</html>
